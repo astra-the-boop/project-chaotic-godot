@@ -104,13 +104,14 @@ gravity_scale = 0.0
 script = ExtResource("1_6d1xh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(-6, 0)
 shape = SubResource("CircleShape2D_8mgss")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_xae8c")
 autoplay = "default"
-frame_progress = 0.724354
+frame_progress = 0.740409
 
 [node name="Right" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2(62.5, 0)
