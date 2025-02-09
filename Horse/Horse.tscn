@@ -1,0 +1,139 @@
+[gd_scene load_steps=18 format=3 uid="uid://g5o5kow756ka"]
+
+[ext_resource type="Script" path="res://Horse/horse.gd" id="1_6d1xh"]
+[ext_resource type="Texture2D" uid="uid://bs32a1mkxkrrd" path="res://Horse/horse_spritesheet.png" id="2_j6ecr"]
+[ext_resource type="AudioStream" uid="uid://crh7814dfe0qc" path="res://Horse/harse-gallop-loop2-103633.ogg" id="3_ixpu0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8mgss"]
+radius = 71.2531
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n7pa8"]
+atlas = ExtResource("2_j6ecr")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v3v1j"]
+atlas = ExtResource("2_j6ecr")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5uqr4"]
+atlas = ExtResource("2_j6ecr")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bhxms"]
+atlas = ExtResource("2_j6ecr")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p2sn8"]
+atlas = ExtResource("2_j6ecr")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kclu5"]
+atlas = ExtResource("2_j6ecr")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0yxuo"]
+atlas = ExtResource("2_j6ecr")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2rgn6"]
+atlas = ExtResource("2_j6ecr")
+region = Rect2(896, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_imcaq"]
+atlas = ExtResource("2_j6ecr")
+region = Rect2(1024, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_47ruw"]
+atlas = ExtResource("2_j6ecr")
+region = Rect2(1152, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4wawk"]
+atlas = ExtResource("2_j6ecr")
+region = Rect2(1280, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c0wfe"]
+atlas = ExtResource("2_j6ecr")
+region = Rect2(1408, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xae8c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n7pa8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v3v1j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5uqr4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bhxms")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p2sn8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kclu5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0yxuo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2rgn6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_imcaq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_47ruw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4wawk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c0wfe")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[node name="Horse" type="RigidBody2D"]
+gravity_scale = 0.0
+script = ExtResource("1_6d1xh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-6, 0)
+shape = SubResource("CircleShape2D_8mgss")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_xae8c")
+autoplay = "default"
+frame_progress = 0.724354
+
+[node name="Right" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(62.5, 0)
+scale = Vector2(0.15, 1)
+
+[node name="Left" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(1.90735e-06, 62)
+scale = Vector2(1, 0.154)
+
+[node name="Up" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-62, 0)
+scale = Vector2(0.15, 1)
+
+[node name="Down" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(0, -63)
+scale = Vector2(1, 0.154)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_ixpu0")
+autoplay = true
+parameters/looping = true
+
+[connection signal="screen_exited" from="Right" to="." method="_on_right_screen_exited"]
+[connection signal="screen_exited" from="Left" to="." method="_on_left_screen_exited"]
+[connection signal="screen_exited" from="Up" to="." method="_on_up_screen_exited"]
+[connection signal="screen_exited" from="Down" to="." method="_on_down_screen_exited"]
