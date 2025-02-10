@@ -6,4 +6,4 @@ Project Chaotic Godot is a Godot game where anyone in the Hack Club server can a
 ## Rules:
 * No vandalism (Purposefully griefing, destroying, excessively overwriting other people's code or assets)
 * No bigotry (Racism, sexism, homophobia, transphobia, etc...) or usage of slurs
-* Describe what you added
+* Describe what you added in your PR/commit messages
