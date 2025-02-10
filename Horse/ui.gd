@@ -9,7 +9,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	$Score.text = str(score)
 
-
 func _on_horse_button_pressed() -> void:
 	var new_horse = Horse_Bouncy.instantiate()
 	get_parent().add_child(new_horse)
