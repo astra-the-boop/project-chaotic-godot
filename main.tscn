@@ -1,3 +1,7 @@
-[gd_scene format=3 uid="uid://bwob704fnv24f"]
+[gd_scene load_steps=2 format=3 uid="uid://bwob704fnv24f"]
+
+[ext_resource type="PackedScene" uid="uid://dm20m7mxicgbm" path="res://Horse/ui.tscn" id="1_5vcho"]
 
 [node name="Main" type="Node2D"]
+
+[node name="UI" parent="." instance=ExtResource("1_5vcho")]
