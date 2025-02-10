@@ -1,7 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://dm20m7mxicgbm"]
+[gd_scene load_steps=8 format=3 uid="uid://dm20m7mxicgbm"]
 
 [ext_resource type="Script" path="res://Horse/ui.gd" id="1_jrapq"]
-[ext_resource type="PackedScene" uid="uid://bq51eony2oy1h" path="res://kaboom/kaboom.tscn" id="2_y2jnf"]
 [ext_resource type="Script" path="res://kaboom/character_body_2d.gd" id="3_cqgrx"]
 [ext_resource type="Texture2D" uid="uid://c6mpng7jb0uc5" path="res://icon.svg" id="4_blvvj"]
 [ext_resource type="Script" path="res://kaboom/spawnHorseZone.gd" id="5_tet7l"]
@@ -45,8 +44,6 @@ grow_horizontal = 2
 text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="kaboom" parent="." instance=ExtResource("2_y2jnf")]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 script = ExtResource("3_cqgrx")
