@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://c54gpl86tcefe"]
+
+[ext_resource type="Texture2D" uid="uid://bj1g4uw50p2ut" path="res://mcdonald/mcdonald-s-restaurant.jpg" id="1_7jluc"]
+
+[node name="Mcdonald_tscn" type="Node2D"]
+
+[node name="Mcdonald-s-restaurant" type="Sprite2D" parent="."]
+position = Vector2(471.5, 224.25)
+scale = Vector2(1.04556, 0.794849)
+texture = ExtResource("1_7jluc")

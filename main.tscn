@@ -1,16 +1,17 @@
-[gd_scene load_steps=9 format=3 uid="uid://bwob704fnv24f"]
+[gd_scene load_steps=10 format=3 uid="uid://bwob704fnv24f"]
 
 [ext_resource type="PackedScene" uid="uid://dm20m7mxicgbm" path="res://Horse/ui.tscn" id="1_5vcho"]
 [ext_resource type="Script" path="res://kaboom/character_body_2d.gd" id="2_8aixf"]
 [ext_resource type="Texture2D" uid="uid://c6mpng7jb0uc5" path="res://icon.svg" id="3_4pj1l"]
 [ext_resource type="Script" path="res://kaboom/spawnHorseZone.gd" id="4_ae1dt"]
 [ext_resource type="Script" path="res://camera_follow.gd" id="5_rmkm4"]
+[ext_resource type="PackedScene" uid="uid://c54gpl86tcefe" path="res://mcdonald/mcdonald.tscn.tscn" id="6_8pvvq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_27bb8"]
 size = Vector2(58, 49)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8tv1i"]
-size = Vector2(4186, 27)
+size = Vector2(7360, 27)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kif8o"]
 size = Vector2(210, 80)
@@ -18,6 +19,9 @@ size = Vector2(210, 80)
 [node name="Main" type="Node2D"]
 
 [node name="UI" parent="." instance=ExtResource("1_5vcho")]
+
+[node name="Mcdonald_tscn" parent="." instance=ExtResource("6_8pvvq")]
+position = Vector2(4076, 208)
 
 [node name="PLayer" type="CharacterBody2D" parent="."]
 unique_name_in_owner = true
@@ -35,7 +39,7 @@ texture = ExtResource("3_4pj1l")
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(510, 664.5)
+position = Vector2(2097, 664.5)
 shape = SubResource("RectangleShape2D_8tv1i")
 
 [node name="Area2D" type="Area2D" parent="."]
