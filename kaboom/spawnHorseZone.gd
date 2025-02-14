@@ -7,4 +7,4 @@ func _ready():
 	
 
 func _on_body_entered(body):
-	$".."._on_horse_button_pressed()
+	$"../UI"._on_horse_button_pressed()
