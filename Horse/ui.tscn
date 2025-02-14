@@ -1,18 +1,22 @@
-[gd_scene load_steps=8 format=3 uid="uid://dm20m7mxicgbm"]
+[gd_scene load_steps=10 format=3 uid="uid://dm20m7mxicgbm"]
 
 [ext_resource type="Script" path="res://Horse/ui.gd" id="1_jrapq"]
 [ext_resource type="Script" path="res://kaboom/character_body_2d.gd" id="3_cqgrx"]
 [ext_resource type="Texture2D" uid="uid://c6mpng7jb0uc5" path="res://icon.svg" id="4_blvvj"]
+[ext_resource type="Script" path="res://Horse/next_room.gd" id="5_d4uq4"]
 [ext_resource type="Script" path="res://kaboom/spawnHorseZone.gd" id="5_tet7l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h74um"]
-size = Vector2(58, 49)
+size = Vector2(86, 83)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2jckn"]
 size = Vector2(4186, 27)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t2bln"]
-size = Vector2(210, 80)
+size = Vector2(139.5, 67.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qkssp"]
+size = Vector2(152, 683)
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_jrapq")
@@ -49,12 +53,12 @@ vertical_alignment = 1
 script = ExtResource("3_cqgrx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(65, 621.5)
+position = Vector2(51, 604.5)
 shape = SubResource("RectangleShape2D_h74um")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
-position = Vector2(49, 603)
-scale = Vector2(0.742188, 0.6875)
+position = Vector2(49.75, 603)
+scale = Vector2(0.753906, 0.6875)
 texture = ExtResource("4_blvvj")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
@@ -67,8 +71,15 @@ shape = SubResource("RectangleShape2D_2jckn")
 script = ExtResource("5_tet7l")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(105, 38)
+position = Vector2(66.25, 28.25)
 shape = SubResource("RectangleShape2D_t2bln")
+
+[node name="nextRoom" type="Area2D" parent="."]
+script = ExtResource("5_d4uq4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="nextRoom"]
+position = Vector2(1366, 329.5)
+shape = SubResource("RectangleShape2D_qkssp")
 
 [connection signal="pressed" from="Menu/VSplitContainer/HorseButton" to="." method="_on_horse_button_pressed"]
 [connection signal="pressed" from="Menu/VSplitContainer/Button" to="." method="_on_button_pressed"]

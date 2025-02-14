@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bwtp0ouq5fu8"]
+
+[node name="Calc" type="Node2D"]
+
+[node name="TextEdit" type="TextEdit" parent="."]
+offset_left = 213.0
+offset_top = 218.0
+offset_right = 1368.0
+offset_bottom = 366.0
+theme_override_font_sizes/font_size = 30
+text = "calc is shr0t for cakucluator guys, im gjust using slang here 😎😎😎
+🌐"
