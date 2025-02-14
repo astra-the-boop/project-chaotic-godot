@@ -98,7 +98,17 @@ func on9click() -> void:
 		$input2.text += "9"
 
 func onequalclick() -> void:
-	$results.text += str(int($input1.text)+int($input2.text))
+	if $op.text == "+":
+		$results.text += str(float($input1.text)+float($input2.text))
+	elif $op.text == "-":
+		$results.text += str(float($input1.text)-float($input2.text))
+	elif $op.text == "*":
+		$results.text += str(float($input1.text)*float($input2.text))
+	elif $op.text == "/":
+		$results.text += str(float($input1.text)/float($input2.text))
+	currentInput = 0
+	$input1.text = ""
+	$input2.text = ""
 
 
 

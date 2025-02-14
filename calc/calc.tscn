@@ -1,14 +1,27 @@
-[gd_scene load_steps=6 format=3 uid="uid://bwtp0ouq5fu8"]
+[gd_scene load_steps=11 format=3 uid="uid://bwtp0ouq5fu8"]
 
 [ext_resource type="Script" path="res://calc/calc.gd" id="1_6sbmi"]
 [ext_resource type="Script" path="res://kaboom/character_body_2d.gd" id="1_bmtdi"]
 [ext_resource type="Texture2D" uid="uid://c6mpng7jb0uc5" path="res://icon.svg" id="2_dh47j"]
+[ext_resource type="Script" path="res://calc/0.gd" id="3_mltdl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2yibq"]
 size = Vector2(4413, 22)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6sprg"]
+size = Vector2(899.25, 9.75)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5k4mb"]
 size = Vector2(86, 83)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gqfoc"]
+size = Vector2(60.5, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gm4fx"]
+size = Vector2(74, 74)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xym20"]
+size = Vector2(70, 432)
 
 [node name="Calc" type="Node2D"]
 script = ExtResource("1_6sbmi")
@@ -65,6 +78,15 @@ theme_override_font_sizes/font_size = 40
 position = Vector2(-152, 660)
 shape = SubResource("RectangleShape2D_2yibq")
 
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(626.625, 449.125)
+shape = SubResource("RectangleShape2D_6sprg")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(629, 447)
+scale = Vector2(7.05469, 0.0703125)
+texture = ExtResource("2_dh47j")
+
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 script = ExtResource("1_bmtdi")
 
@@ -85,6 +107,13 @@ offset_bottom = 520.0
 theme_override_font_sizes/font_size = 30
 text = "0"
 
+[node name="Area2D" type="Area2D" parent="0"]
+script = ExtResource("3_mltdl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="0/Area2D"]
+position = Vector2(29.75, 27)
+shape = SubResource("RectangleShape2D_gqfoc")
+
 [node name="1" type="Button" parent="."]
 offset_left = 312.0
 offset_top = 466.0
@@ -92,6 +121,12 @@ offset_right = 373.0
 offset_bottom = 522.0
 theme_override_font_sizes/font_size = 30
 text = "1"
+
+[node name="Area2D" type="Area2D" parent="1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="1/Area2D"]
+position = Vector2(29.75, 27)
+shape = SubResource("RectangleShape2D_gqfoc")
 
 [node name="2" type="Button" parent="."]
 offset_left = 413.0
@@ -101,6 +136,12 @@ offset_bottom = 520.0
 theme_override_font_sizes/font_size = 30
 text = "2"
 
+[node name="Area2D" type="Area2D" parent="2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="2/Area2D"]
+position = Vector2(29.75, 27)
+shape = SubResource("RectangleShape2D_gqfoc")
+
 [node name="3" type="Button" parent="."]
 offset_left = 521.0
 offset_top = 466.0
@@ -108,6 +149,12 @@ offset_right = 582.0
 offset_bottom = 522.0
 theme_override_font_sizes/font_size = 30
 text = "3"
+
+[node name="Area2D" type="Area2D" parent="3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="3/Area2D"]
+position = Vector2(29.75, 27)
+shape = SubResource("RectangleShape2D_gqfoc")
 
 [node name="4" type="Button" parent="."]
 offset_left = 624.0
@@ -117,6 +164,12 @@ offset_bottom = 520.0
 theme_override_font_sizes/font_size = 30
 text = "4"
 
+[node name="Area2D" type="Area2D" parent="4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="4/Area2D"]
+position = Vector2(29.75, 27)
+shape = SubResource("RectangleShape2D_gqfoc")
+
 [node name="5" type="Button" parent="."]
 offset_left = 306.0
 offset_top = 269.0
@@ -124,6 +177,12 @@ offset_right = 367.0
 offset_bottom = 325.0
 theme_override_font_sizes/font_size = 30
 text = "5"
+
+[node name="Area2D" type="Area2D" parent="5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="5/Area2D"]
+position = Vector2(29.75, 27)
+shape = SubResource("RectangleShape2D_gqfoc")
 
 [node name="6" type="Button" parent="."]
 offset_left = 408.0
@@ -133,6 +192,12 @@ offset_bottom = 321.0
 theme_override_font_sizes/font_size = 30
 text = "6"
 
+[node name="Area2D" type="Area2D" parent="6"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="6/Area2D"]
+position = Vector2(29.75, 27)
+shape = SubResource("RectangleShape2D_gqfoc")
+
 [node name="7" type="Button" parent="."]
 offset_left = 524.0
 offset_top = 263.0
@@ -140,6 +205,12 @@ offset_right = 585.0
 offset_bottom = 319.0
 theme_override_font_sizes/font_size = 30
 text = "7"
+
+[node name="Area2D" type="Area2D" parent="7"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="7/Area2D"]
+position = Vector2(29.75, 27)
+shape = SubResource("RectangleShape2D_gqfoc")
 
 [node name="8" type="Button" parent="."]
 offset_left = 629.0
@@ -149,6 +220,12 @@ offset_bottom = 316.0
 theme_override_font_sizes/font_size = 30
 text = "8"
 
+[node name="Area2D" type="Area2D" parent="8"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="8/Area2D"]
+position = Vector2(29.75, 27)
+shape = SubResource("RectangleShape2D_gqfoc")
+
 [node name="9" type="Button" parent="."]
 offset_left = 727.0
 offset_top = 263.0
@@ -156,6 +233,12 @@ offset_right = 788.0
 offset_bottom = 319.0
 theme_override_font_sizes/font_size = 30
 text = "9"
+
+[node name="Area2D" type="Area2D" parent="9"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="9/Area2D"]
+position = Vector2(29.75, 27)
+shape = SubResource("RectangleShape2D_gqfoc")
 
 [node name="mult" type="Button" parent="."]
 offset_left = 841.0
@@ -165,6 +248,12 @@ offset_bottom = 318.0
 theme_override_font_sizes/font_size = 30
 text = "*"
 
+[node name="Area2D" type="Area2D" parent="mult"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mult/Area2D"]
+position = Vector2(38, 38)
+shape = SubResource("RectangleShape2D_gm4fx")
+
 [node name="div" type="Button" parent="."]
 offset_left = 954.0
 offset_top = 244.0
@@ -172,6 +261,12 @@ offset_right = 1028.0
 offset_bottom = 318.0
 theme_override_font_sizes/font_size = 30
 text = "/"
+
+[node name="Area2D" type="Area2D" parent="div"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="div/Area2D"]
+position = Vector2(38, 38)
+shape = SubResource("RectangleShape2D_gm4fx")
 
 [node name="min" type="Button" parent="."]
 offset_left = 953.0
@@ -181,6 +276,12 @@ offset_bottom = 524.0
 theme_override_font_sizes/font_size = 30
 text = "ー"
 
+[node name="Area2D" type="Area2D" parent="min"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="min/Area2D"]
+position = Vector2(38, 38)
+shape = SubResource("RectangleShape2D_gm4fx")
+
 [node name="plus" type="Button" parent="."]
 offset_left = 842.0
 offset_top = 448.0
@@ -189,6 +290,12 @@ offset_bottom = 522.0
 theme_override_font_sizes/font_size = 30
 text = "+"
 
+[node name="Area2D" type="Area2D" parent="plus"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="plus/Area2D"]
+position = Vector2(38, 38)
+shape = SubResource("RectangleShape2D_gm4fx")
+
 [node name="equal" type="Button" parent="."]
 offset_left = 1088.0
 offset_top = 237.0
@@ -196,3 +303,9 @@ offset_right = 1162.0
 offset_bottom = 649.0
 theme_override_font_sizes/font_size = 30
 text = "="
+
+[node name="Area2D" type="Area2D" parent="equal"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="equal/Area2D"]
+position = Vector2(37, 215)
+shape = SubResource("RectangleShape2D_xym20")
