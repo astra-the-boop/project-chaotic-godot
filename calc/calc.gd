@@ -1,6 +1,6 @@
 extends Node2D
 
-var currentInput = 0
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -22,91 +22,91 @@ func _ready() -> void:
 
 func onplusclick() -> void:
 	$op.text = "+"
-	currentInput = 2
+	Globals.calcinput = 2
 
 func onminclick() -> void:
 	$op.text = "-"
-	currentInput = 2
+	Globals.calcinput = 2
 
 func ondivclick() -> void:
 	$op.text = "/"
-	currentInput = 2
+	Globals.calcinput = 2
 
 func onmultclick() -> void:
 	$op.text = "*"
-	currentInput = 2
+	Globals.calcinput = 2
 
 
 func on0click() -> void:
-	if currentInput == 0:
+	if Globals.calcinput == 0:
 		$input1.text += "0"
 	else:
 		$input2.text += "0"
 
 func on1click() -> void:
-	if currentInput == 0:
+	if Globals.calcinput == 0:
 		$input1.text += "1"
 	else:
 		$input2.text += "1"
 
 func on2click() -> void:
-	if currentInput == 0:
+	if Globals.calcinput == 0:
 		$input1.text += "2"
 	else:
 		$input2.text += "2"
 
 func on3click() -> void:
-	if currentInput == 0:
+	if Globals.calcinput == 0:
 		$input1.text += "3"
 	else:
 		$input2.text += "3"
 
 func on4click() -> void:
-	if currentInput == 0:
+	if Globals.calcinput == 0:
 		$input1.text += "4"
 	else:
 		$input2.text += "4"
 
 func on5click() -> void:
-	if currentInput == 0:
+	if Globals.calcinput == 0:
 		$input1.text += "5"
 	else:
 		$input2.text += "5"
 
 func on6click() -> void:
-	if currentInput == 0:
+	if Globals.calcinput == 0:
 		$input1.text += "6"
 	else:
 		$input2.text += "6"
 
 func on7click() -> void:
-	if currentInput == 0:
+	if Globals.calcinput == 0:
 		$input1.text += "7"
 	else:
 		$input2.text += "7"
 
 func on8click() -> void:
-	if currentInput == 0:
+	if Globals.calcinput == 0:
 		$input1.text += "8"
 	else:
 		$input2.text += "8"
 
 func on9click() -> void:
-	if currentInput == 0:
+	if Globals.calcinput == 0:
 		$input1.text += "9"
 	else:
 		$input2.text += "9"
 
 func onequalclick() -> void:
 	if $op.text == "+":
-		$results.text += str(float($input1.text)+float($input2.text))
+		$results.text = str(float($input1.text)+float($input2.text))
 	elif $op.text == "-":
-		$results.text += str(float($input1.text)-float($input2.text))
+		$results.text = str(float($input1.text)-float($input2.text))
 	elif $op.text == "*":
-		$results.text += str(float($input1.text)*float($input2.text))
+		$results.text = str(float($input1.text)*float($input2.text))
 	elif $op.text == "/":
-		$results.text += str(float($input1.text)/float($input2.text))
-	currentInput = 0
+		$results.text = str(float($input1.text)/float($input2.text))
+	Globals.calcinput = 0
 	$input1.text = ""
 	$input2.text = ""
 
