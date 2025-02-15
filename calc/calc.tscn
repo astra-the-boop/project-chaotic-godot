@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://bwtp0ouq5fu8"]
+[gd_scene load_steps=28 format=3 uid="uid://bwtp0ouq5fu8"]
 
 [ext_resource type="Script" path="res://calc/calc.gd" id="1_6sbmi"]
 [ext_resource type="Script" path="res://kaboom/character_body_2d.gd" id="1_bmtdi"]
@@ -18,6 +18,7 @@
 [ext_resource type="Script" path="res://calc/min.gd" id="16_v2q5x"]
 [ext_resource type="Script" path="res://calc/plus.gd" id="17_aqjr6"]
 [ext_resource type="Script" path="res://calc/equal.gd" id="18_a87dg"]
+[ext_resource type="Script" path="res://calc/area_2d.gd" id="19_kq704"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2yibq"]
 size = Vector2(4413, 22)
@@ -39,6 +40,9 @@ size = Vector2(73, 67)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xym20"]
 size = Vector2(70, 432)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ohecj"]
+size = Vector2(155, 675)
 
 [node name="Calc" type="Node2D"]
 script = ExtResource("1_6sbmi")
@@ -340,3 +344,10 @@ script = ExtResource("18_a87dg")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="equal/Area2D"]
 position = Vector2(37, 215)
 shape = SubResource("RectangleShape2D_xym20")
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("19_kq704")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-615, 305)
+shape = SubResource("RectangleShape2D_ohecj")
