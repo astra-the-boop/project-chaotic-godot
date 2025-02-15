@@ -6,5 +6,7 @@ func _ready():
 	
 
 func _on_body_entered(body):
-	if body.is_in_group("player"):
-		$".."._on_horse_button_pressed()
+	if Globals.calcinput == 0:
+		$"../../input1".text += "4"
+	else:
+		$"../../input2".text += "4"
