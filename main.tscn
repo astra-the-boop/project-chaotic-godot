@@ -20,8 +20,9 @@ size = Vector2(210, 80)
 
 [node name="UI" parent="." instance=ExtResource("1_5vcho")]
 
-[node name="Mcdonald_tscn" parent="." instance=ExtResource("6_8pvvq")]
-position = Vector2(4076, 208)
+[node name="Mcdonald_tscn" parent="." node_paths=PackedStringArray("player") instance=ExtResource("6_8pvvq")]
+position = Vector2(2980, 208)
+player = NodePath("../PLayer")
 
 [node name="PLayer" type="CharacterBody2D" parent="."]
 unique_name_in_owner = true
