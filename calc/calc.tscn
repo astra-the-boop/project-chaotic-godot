@@ -1,23 +1,23 @@
-[gd_scene load_steps=28 format=3 uid="uid://bwtp0ouq5fu8"]
+[gd_scene load_steps=29 format=3 uid="uid://bwtp0ouq5fu8"]
 
 [ext_resource type="Script" path="res://calc/calc.gd" id="1_6sbmi"]
 [ext_resource type="Script" path="res://kaboom/character_body_2d.gd" id="1_bmtdi"]
 [ext_resource type="Texture2D" uid="uid://c6mpng7jb0uc5" path="res://icon.svg" id="2_dh47j"]
-[ext_resource type="Script" path="res://calc/0.gd" id="3_mltdl"]
-[ext_resource type="Script" path="res://calc/1.gd" id="5_gxviw"]
-[ext_resource type="Script" path="res://calc/2.gd" id="6_8dbm2"]
-[ext_resource type="Script" path="res://calc/3.gd" id="7_qfdg6"]
-[ext_resource type="Script" path="res://calc/4.gd" id="8_q8rgl"]
-[ext_resource type="Script" path="res://calc/5.gd" id="9_vr5uu"]
-[ext_resource type="Script" path="res://calc/6.gd" id="10_1c43i"]
-[ext_resource type="Script" path="res://calc/7.gd" id="11_gmreg"]
-[ext_resource type="Script" path="res://calc/8.gd" id="12_fioty"]
-[ext_resource type="Script" path="res://calc/9.gd" id="13_3pf3f"]
-[ext_resource type="Script" path="res://calc/mult.gd" id="14_vlw3c"]
-[ext_resource type="Script" path="res://calc/div.gd" id="15_l0iaf"]
-[ext_resource type="Script" path="res://calc/min.gd" id="16_v2q5x"]
-[ext_resource type="Script" path="res://calc/plus.gd" id="17_aqjr6"]
-[ext_resource type="Script" path="res://calc/equal.gd" id="18_a87dg"]
+[ext_resource type="Script" path="res://calc/buttons/0.gd" id="3_mltdl"]
+[ext_resource type="Script" path="res://calc/buttons/1.gd" id="5_gxviw"]
+[ext_resource type="Script" path="res://calc/buttons/2.gd" id="6_8dbm2"]
+[ext_resource type="Script" path="res://calc/buttons/3.gd" id="7_qfdg6"]
+[ext_resource type="Script" path="res://calc/buttons/4.gd" id="8_q8rgl"]
+[ext_resource type="Script" path="res://calc/buttons/5.gd" id="9_vr5uu"]
+[ext_resource type="Script" path="res://calc/buttons/6.gd" id="10_1c43i"]
+[ext_resource type="Script" path="res://calc/buttons/7.gd" id="11_gmreg"]
+[ext_resource type="Script" path="res://calc/buttons/8.gd" id="12_fioty"]
+[ext_resource type="Script" path="res://calc/buttons/9.gd" id="13_3pf3f"]
+[ext_resource type="Script" path="res://calc/buttons/mult.gd" id="14_vlw3c"]
+[ext_resource type="Script" path="res://calc/buttons/div.gd" id="15_l0iaf"]
+[ext_resource type="Script" path="res://calc/buttons/min.gd" id="16_v2q5x"]
+[ext_resource type="Script" path="res://calc/buttons/plus.gd" id="17_aqjr6"]
+[ext_resource type="Script" path="res://calc/buttons/equal.gd" id="18_a87dg"]
 [ext_resource type="Script" path="res://calc/area_2d.gd" id="19_kq704"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2yibq"]
@@ -25,6 +25,9 @@ size = Vector2(4413, 22)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6sprg"]
 size = Vector2(899.25, 9.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lyd2h"]
+size = Vector2(104, 756)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5k4mb"]
 size = Vector2(86, 83)
@@ -108,7 +111,12 @@ position = Vector2(629, 447)
 scale = Vector2(7.05469, 0.0703125)
 texture = ExtResource("2_dh47j")
 
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1242, 279)
+shape = SubResource("RectangleShape2D_lyd2h")
+
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(192, -5)
 script = ExtResource("1_bmtdi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
@@ -349,5 +357,5 @@ shape = SubResource("RectangleShape2D_xym20")
 script = ExtResource("19_kq704")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-615, 305)
+position = Vector2(-134, 301)
 shape = SubResource("RectangleShape2D_ohecj")

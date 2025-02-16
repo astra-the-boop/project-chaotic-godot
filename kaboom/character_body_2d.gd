@@ -24,7 +24,7 @@ func _physics_process(delta: float) -> void:
 
 func input() -> Vector2:
 	var input_dir = Vector2.ZERO
-	input_dir.x = Input.get_axis("ui_left", "ui_right")
+	input_dir.x = Input.get_axis("player_left", "player_right")
 	input_dir = input_dir.normalized()
 	return input_dir
 
@@ -38,7 +38,7 @@ func player_movement():
 	move_and_slide()
 
 func jump():
-	if Input.is_action_just_pressed("ui_up"):
+	if Input.is_action_just_pressed("player_up"):
 		if current_jumps < max_jump:
 			velocity.y = jump_power
 			current_jumps += 1
