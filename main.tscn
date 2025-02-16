@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bwob704fnv24f"]
+[gd_scene load_steps=12 format=3 uid="uid://bwob704fnv24f"]
 
 [ext_resource type="PackedScene" uid="uid://dm20m7mxicgbm" path="res://Horse/ui.tscn" id="1_5vcho"]
 [ext_resource type="Script" path="res://kaboom/character_body_2d.gd" id="2_8aixf"]
@@ -6,36 +6,26 @@
 [ext_resource type="Script" path="res://kaboom/spawnHorseZone.gd" id="4_ae1dt"]
 [ext_resource type="Script" path="res://camera_follow.gd" id="5_rmkm4"]
 [ext_resource type="PackedScene" uid="uid://c54gpl86tcefe" path="res://mcdonald/mcdonald.tscn.tscn" id="6_8pvvq"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_27bb8"]
-size = Vector2(58, 49)
+[ext_resource type="Script" path="res://Horse/next_room.gd" id="7_chjw7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8tv1i"]
 size = Vector2(7360, 27)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kif8o"]
-size = Vector2(210, 80)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rdcus"]
+size = Vector2(139.5, 67.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g8bcf"]
+size = Vector2(86, 83)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1a0w3"]
+size = Vector2(152, 683)
 
 [node name="Main" type="Node2D"]
 
 [node name="UI" parent="." instance=ExtResource("1_5vcho")]
 
-[node name="Mcdonald_tscn" parent="." node_paths=PackedStringArray("player") instance=ExtResource("6_8pvvq")]
+[node name="Mcdonald_tscn" parent="." instance=ExtResource("6_8pvvq")]
 position = Vector2(2980, 208)
-player = NodePath("../PLayer")
-
-[node name="PLayer" type="CharacterBody2D" parent="."]
-unique_name_in_owner = true
-script = ExtResource("2_8aixf")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PLayer"]
-position = Vector2(65, 621.5)
-shape = SubResource("RectangleShape2D_27bb8")
-
-[node name="Sprite2D" type="Sprite2D" parent="PLayer"]
-position = Vector2(49, 603)
-scale = Vector2(0.742188, 0.6875)
-texture = ExtResource("3_4pj1l")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -46,9 +36,9 @@ shape = SubResource("RectangleShape2D_8tv1i")
 [node name="Area2D" type="Area2D" parent="."]
 script = ExtResource("4_ae1dt")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(105, 38)
-shape = SubResource("RectangleShape2D_kif8o")
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(66.25, 28.25)
+shape = SubResource("RectangleShape2D_rdcus")
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("player")]
 position = Vector2(63, 327)
@@ -56,3 +46,23 @@ position_smoothing_enabled = true
 position_smoothing_speed = 2.0
 script = ExtResource("5_rmkm4")
 player = NodePath("../PLayer")
+
+[node name="PLayer" type="CharacterBody2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_8aixf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PLayer"]
+position = Vector2(51, 604.5)
+shape = SubResource("RectangleShape2D_g8bcf")
+
+[node name="Sprite2D" type="Sprite2D" parent="PLayer"]
+position = Vector2(49.75, 603)
+scale = Vector2(0.753906, 0.6875)
+texture = ExtResource("3_4pj1l")
+
+[node name="nextRoom" type="Area2D" parent="."]
+script = ExtResource("7_chjw7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="nextRoom"]
+position = Vector2(1366, 329.5)
+shape = SubResource("RectangleShape2D_1a0w3")

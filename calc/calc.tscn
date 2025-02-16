@@ -1,0 +1,353 @@
+[gd_scene load_steps=28 format=3 uid="uid://bwtp0ouq5fu8"]
+
+[ext_resource type="Script" path="res://calc/calc.gd" id="1_6sbmi"]
+[ext_resource type="Script" path="res://kaboom/character_body_2d.gd" id="1_bmtdi"]
+[ext_resource type="Texture2D" uid="uid://c6mpng7jb0uc5" path="res://icon.svg" id="2_dh47j"]
+[ext_resource type="Script" path="res://calc/0.gd" id="3_mltdl"]
+[ext_resource type="Script" path="res://calc/1.gd" id="5_gxviw"]
+[ext_resource type="Script" path="res://calc/2.gd" id="6_8dbm2"]
+[ext_resource type="Script" path="res://calc/3.gd" id="7_qfdg6"]
+[ext_resource type="Script" path="res://calc/4.gd" id="8_q8rgl"]
+[ext_resource type="Script" path="res://calc/5.gd" id="9_vr5uu"]
+[ext_resource type="Script" path="res://calc/6.gd" id="10_1c43i"]
+[ext_resource type="Script" path="res://calc/7.gd" id="11_gmreg"]
+[ext_resource type="Script" path="res://calc/8.gd" id="12_fioty"]
+[ext_resource type="Script" path="res://calc/9.gd" id="13_3pf3f"]
+[ext_resource type="Script" path="res://calc/mult.gd" id="14_vlw3c"]
+[ext_resource type="Script" path="res://calc/div.gd" id="15_l0iaf"]
+[ext_resource type="Script" path="res://calc/min.gd" id="16_v2q5x"]
+[ext_resource type="Script" path="res://calc/plus.gd" id="17_aqjr6"]
+[ext_resource type="Script" path="res://calc/equal.gd" id="18_a87dg"]
+[ext_resource type="Script" path="res://calc/area_2d.gd" id="19_kq704"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2yibq"]
+size = Vector2(4413, 22)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6sprg"]
+size = Vector2(899.25, 9.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5k4mb"]
+size = Vector2(86, 83)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gqfoc"]
+size = Vector2(60.5, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gm4fx"]
+size = Vector2(74, 69)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7imyf"]
+size = Vector2(73, 67)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xym20"]
+size = Vector2(70, 432)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ohecj"]
+size = Vector2(155, 675)
+
+[node name="Calc" type="Node2D"]
+script = ExtResource("1_6sbmi")
+
+[node name="TextEdit" type="TextEdit" parent="."]
+offset_left = 206.0
+offset_top = -13.0
+offset_right = 1361.0
+offset_bottom = 135.0
+theme_override_font_sizes/font_size = 30
+text = "calc is shr0t for cakucluator guys, im gjust using slang here 😎😎😎
+🌐"
+
+[node name="input1" type="TextEdit" parent="."]
+offset_left = 158.0
+offset_top = 125.0
+offset_right = 336.0
+offset_bottom = 214.0
+theme_override_font_sizes/font_size = 40
+
+[node name="op" type="TextEdit" parent="."]
+offset_left = 354.0
+offset_top = 120.0
+offset_right = 420.0
+offset_bottom = 227.0
+theme_override_font_sizes/font_size = 40
+
+[node name="input2" type="TextEdit" parent="."]
+offset_left = 442.0
+offset_top = 133.0
+offset_right = 609.0
+offset_bottom = 214.0
+theme_override_font_sizes/font_size = 40
+
+[node name="=" type="TextEdit" parent="."]
+offset_left = 635.0
+offset_top = 108.0
+offset_right = 691.0
+offset_bottom = 233.0
+theme_override_font_sizes/font_size = 80
+text = "="
+editable = false
+
+[node name="results" type="TextEdit" parent="."]
+offset_left = 722.0
+offset_top = 114.0
+offset_right = 919.0
+offset_bottom = 214.0
+theme_override_font_sizes/font_size = 40
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-152, 660)
+shape = SubResource("RectangleShape2D_2yibq")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(626.625, 449.125)
+shape = SubResource("RectangleShape2D_6sprg")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(629, 447)
+scale = Vector2(7.05469, 0.0703125)
+texture = ExtResource("2_dh47j")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_bmtdi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(51, 604.5)
+shape = SubResource("RectangleShape2D_5k4mb")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(49.75, 603)
+scale = Vector2(0.753906, 0.6875)
+texture = ExtResource("2_dh47j")
+
+[node name="0" type="Button" parent="."]
+offset_left = 716.0
+offset_top = 464.0
+offset_right = 777.0
+offset_bottom = 520.0
+theme_override_font_sizes/font_size = 30
+text = "0"
+
+[node name="area0" type="Area2D" parent="0"]
+script = ExtResource("3_mltdl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="0/area0"]
+position = Vector2(29.75, 27)
+shape = SubResource("RectangleShape2D_gqfoc")
+
+[node name="1" type="Button" parent="."]
+offset_left = 312.0
+offset_top = 466.0
+offset_right = 373.0
+offset_bottom = 522.0
+theme_override_font_sizes/font_size = 30
+text = "1"
+
+[node name="Area2D" type="Area2D" parent="1"]
+script = ExtResource("5_gxviw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="1/Area2D"]
+position = Vector2(29.75, 27)
+shape = SubResource("RectangleShape2D_gqfoc")
+
+[node name="2" type="Button" parent="."]
+offset_left = 413.0
+offset_top = 464.0
+offset_right = 474.0
+offset_bottom = 520.0
+theme_override_font_sizes/font_size = 30
+text = "2"
+
+[node name="Area2D" type="Area2D" parent="2"]
+script = ExtResource("6_8dbm2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="2/Area2D"]
+position = Vector2(29.75, 27)
+shape = SubResource("RectangleShape2D_gqfoc")
+
+[node name="3" type="Button" parent="."]
+offset_left = 521.0
+offset_top = 466.0
+offset_right = 582.0
+offset_bottom = 522.0
+theme_override_font_sizes/font_size = 30
+text = "3"
+
+[node name="Area2D" type="Area2D" parent="3"]
+script = ExtResource("7_qfdg6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="3/Area2D"]
+position = Vector2(29.75, 27)
+shape = SubResource("RectangleShape2D_gqfoc")
+
+[node name="4" type="Button" parent="."]
+offset_left = 624.0
+offset_top = 464.0
+offset_right = 685.0
+offset_bottom = 520.0
+theme_override_font_sizes/font_size = 30
+text = "4"
+
+[node name="Area2D" type="Area2D" parent="4"]
+script = ExtResource("8_q8rgl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="4/Area2D"]
+position = Vector2(29.75, 27)
+shape = SubResource("RectangleShape2D_gqfoc")
+
+[node name="5" type="Button" parent="."]
+offset_left = 306.0
+offset_top = 269.0
+offset_right = 367.0
+offset_bottom = 325.0
+theme_override_font_sizes/font_size = 30
+text = "5"
+
+[node name="Area2D" type="Area2D" parent="5"]
+script = ExtResource("9_vr5uu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="5/Area2D"]
+position = Vector2(29.75, 27)
+shape = SubResource("RectangleShape2D_gqfoc")
+
+[node name="6" type="Button" parent="."]
+offset_left = 408.0
+offset_top = 265.0
+offset_right = 469.0
+offset_bottom = 321.0
+theme_override_font_sizes/font_size = 30
+text = "6"
+
+[node name="Area2D" type="Area2D" parent="6"]
+script = ExtResource("10_1c43i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="6/Area2D"]
+position = Vector2(29.75, 27)
+shape = SubResource("RectangleShape2D_gqfoc")
+
+[node name="7" type="Button" parent="."]
+offset_left = 524.0
+offset_top = 263.0
+offset_right = 585.0
+offset_bottom = 319.0
+theme_override_font_sizes/font_size = 30
+text = "7"
+
+[node name="Area2D" type="Area2D" parent="7"]
+script = ExtResource("11_gmreg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="7/Area2D"]
+position = Vector2(29.75, 27)
+shape = SubResource("RectangleShape2D_gqfoc")
+
+[node name="8" type="Button" parent="."]
+offset_left = 629.0
+offset_top = 260.0
+offset_right = 690.0
+offset_bottom = 316.0
+theme_override_font_sizes/font_size = 30
+text = "8"
+
+[node name="Area2D" type="Area2D" parent="8"]
+script = ExtResource("12_fioty")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="8/Area2D"]
+position = Vector2(29.75, 27)
+shape = SubResource("RectangleShape2D_gqfoc")
+
+[node name="9" type="Button" parent="."]
+offset_left = 727.0
+offset_top = 263.0
+offset_right = 788.0
+offset_bottom = 319.0
+theme_override_font_sizes/font_size = 30
+text = "9"
+
+[node name="Area2D" type="Area2D" parent="9"]
+script = ExtResource("13_3pf3f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="9/Area2D"]
+position = Vector2(29.75, 27)
+shape = SubResource("RectangleShape2D_gqfoc")
+
+[node name="mult" type="Button" parent="."]
+offset_left = 841.0
+offset_top = 244.0
+offset_right = 915.0
+offset_bottom = 318.0
+theme_override_font_sizes/font_size = 30
+text = "*"
+
+[node name="Area2D" type="Area2D" parent="mult"]
+script = ExtResource("14_vlw3c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mult/Area2D"]
+position = Vector2(38, 38)
+shape = SubResource("RectangleShape2D_gm4fx")
+
+[node name="div" type="Button" parent="."]
+offset_left = 954.0
+offset_top = 244.0
+offset_right = 1028.0
+offset_bottom = 318.0
+theme_override_font_sizes/font_size = 30
+text = "/"
+
+[node name="Area2D" type="Area2D" parent="div"]
+script = ExtResource("15_l0iaf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="div/Area2D"]
+position = Vector2(38, 38)
+shape = SubResource("RectangleShape2D_gm4fx")
+
+[node name="min" type="Button" parent="."]
+offset_left = 953.0
+offset_top = 450.0
+offset_right = 1027.0
+offset_bottom = 524.0
+theme_override_font_sizes/font_size = 30
+text = "ー"
+
+[node name="Area2D" type="Area2D" parent="min"]
+script = ExtResource("16_v2q5x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="min/Area2D"]
+position = Vector2(38, 40.5)
+shape = SubResource("RectangleShape2D_gm4fx")
+
+[node name="plus" type="Button" parent="."]
+offset_left = 842.0
+offset_top = 448.0
+offset_right = 916.0
+offset_bottom = 522.0
+theme_override_font_sizes/font_size = 30
+text = "+"
+
+[node name="Area2D" type="Area2D" parent="plus"]
+script = ExtResource("17_aqjr6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="plus/Area2D"]
+position = Vector2(37.5, 40.5)
+shape = SubResource("RectangleShape2D_7imyf")
+
+[node name="equal" type="Button" parent="."]
+offset_left = 1088.0
+offset_top = 237.0
+offset_right = 1162.0
+offset_bottom = 649.0
+theme_override_font_sizes/font_size = 30
+text = "="
+
+[node name="Area2D" type="Area2D" parent="equal"]
+script = ExtResource("18_a87dg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="equal/Area2D"]
+position = Vector2(37, 215)
+shape = SubResource("RectangleShape2D_xym20")
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("19_kq704")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-615, 305)
+shape = SubResource("RectangleShape2D_ohecj")
