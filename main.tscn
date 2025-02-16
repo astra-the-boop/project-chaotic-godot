@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://bwob704fnv24f"]
+[gd_scene load_steps=14 format=3 uid="uid://bwob704fnv24f"]
 
 [ext_resource type="PackedScene" uid="uid://dm20m7mxicgbm" path="res://Horse/ui.tscn" id="1_5vcho"]
 [ext_resource type="Script" path="res://kaboom/character_body_2d.gd" id="2_8aixf"]
 [ext_resource type="Texture2D" uid="uid://c6mpng7jb0uc5" path="res://icon.svg" id="3_4pj1l"]
 [ext_resource type="Script" path="res://kaboom/spawnHorseZone.gd" id="4_ae1dt"]
+[ext_resource type="Texture2D" uid="uid://do5rjvxgb1lui" path="res://Horse/juan.webp" id="4_h2r01"]
 [ext_resource type="Script" path="res://camera_follow.gd" id="5_rmkm4"]
 [ext_resource type="PackedScene" uid="uid://c54gpl86tcefe" path="res://mcdonald/mcdonald.tscn.tscn" id="6_8pvvq"]
 [ext_resource type="Script" path="res://Horse/next_room.gd" id="7_chjw7"]
@@ -41,6 +42,11 @@ script = ExtResource("4_ae1dt")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(66.25, 28.25)
 shape = SubResource("RectangleShape2D_rdcus")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+position = Vector2(61, 22.5)
+scale = Vector2(0.0965148, 0.0579179)
+texture = ExtResource("4_h2r01")
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("player")]
 position = Vector2(63, 327)
