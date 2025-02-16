@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bwob704fnv24f"]
+[gd_scene load_steps=13 format=3 uid="uid://bwob704fnv24f"]
 
 [ext_resource type="PackedScene" uid="uid://dm20m7mxicgbm" path="res://Horse/ui.tscn" id="1_5vcho"]
 [ext_resource type="Script" path="res://kaboom/character_body_2d.gd" id="2_8aixf"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://camera_follow.gd" id="5_rmkm4"]
 [ext_resource type="PackedScene" uid="uid://c54gpl86tcefe" path="res://mcdonald/mcdonald.tscn.tscn" id="6_8pvvq"]
 [ext_resource type="Script" path="res://Horse/next_room.gd" id="7_chjw7"]
+[ext_resource type="Texture2D" uid="uid://daq7tk3uhlqy1" path="res://calc/calc.jpg" id="8_ps0xh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8tv1i"]
 size = Vector2(7360, 27)
@@ -18,7 +19,7 @@ size = Vector2(139.5, 67.5)
 size = Vector2(86, 83)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1a0w3"]
-size = Vector2(152, 683)
+size = Vector2(152, 147)
 
 [node name="Main" type="Node2D"]
 
@@ -64,5 +65,10 @@ texture = ExtResource("3_4pj1l")
 script = ExtResource("7_chjw7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="nextRoom"]
-position = Vector2(1366, 329.5)
+position = Vector2(1366, 397.5)
 shape = SubResource("RectangleShape2D_1a0w3")
+
+[node name="Calc" type="Sprite2D" parent="nextRoom"]
+position = Vector2(1371, 404)
+scale = Vector2(0.0979075, 0.0979075)
+texture = ExtResource("8_ps0xh")
