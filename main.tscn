@@ -25,8 +25,9 @@ size = Vector2(152, 147)
 
 [node name="UI" parent="." instance=ExtResource("1_5vcho")]
 
-[node name="Mcdonald_tscn" parent="." instance=ExtResource("6_8pvvq")]
+[node name="Mcdonald_tscn" parent="." node_paths=PackedStringArray("player") instance=ExtResource("6_8pvvq")]
 position = Vector2(2980, 208)
+player = NodePath("../PLayer")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
