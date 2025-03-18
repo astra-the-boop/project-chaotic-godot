@@ -7,16 +7,21 @@ const accel = 50
 const friction = 70
 const max_jump = 3
 const gravity = 120
+const reduce_width = 0.08
 
 var current_jumps = 1
-
-func _ready():
-	add_to_group("player")
+var width: float = 1:
+	get:
+		return width
+	set(value):
+		width = max(value, 1)
+		scale.x = width
 
 func _physics_process(delta: float) -> void:
 	var input_dir: Vector2 = input()
 	if input_dir != Vector2.ZERO:
 		accelerate(input_dir)
+		width -= delta * reduce_width
 	else:
 		add_friction()
 	player_movement()

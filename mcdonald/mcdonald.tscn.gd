@@ -33,7 +33,7 @@ func _process(delta: float) -> void:
 	label.modulate.a = clampf(label.modulate.a + opacity_change_rate, 0.0, 1.0)
 	
 	if area.overlaps_body(player) and Input.is_action_just_pressed("player_bigback"):
-		player.transform = player.transform.scaled_local(Vector2(1.1, 1))
+		player.width *= 1.1
 		
 		# small chance to eat the dogs
 		var sound
