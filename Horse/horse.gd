@@ -23,3 +23,10 @@ func _process(delta: float) -> void:
 func _new_direction():
 	direction = Vector2(randi_range(-10,10),randi_range(-10,10))
 	
+
+func _on_top_collision(body: Node2D):
+	if body.is_in_group("player"):
+		if body.width > 2:
+			if not $DeathSoundPlayer.playing:
+				$DeathSoundPlayer.play()
+		body.velocity.y = -1000

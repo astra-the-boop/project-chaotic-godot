@@ -1,11 +1,12 @@
-[gd_scene load_steps=18 format=3 uid="uid://g5o5kow756ka"]
+[gd_scene load_steps=20 format=3 uid="uid://g5o5kow756ka"]
 
 [ext_resource type="Script" path="res://Horse/horse.gd" id="1_6d1xh"]
 [ext_resource type="Texture2D" uid="uid://bs32a1mkxkrrd" path="res://Horse/horse_spritesheet.png" id="2_j6ecr"]
 [ext_resource type="AudioStream" uid="uid://crh7814dfe0qc" path="res://Horse/harse-gallop-loop2-103633.ogg" id="3_ixpu0"]
+[ext_resource type="AudioStream" uid="uid://wc1qi05r0i7v" path="res://Horse/Horse_death.ogg" id="4_b7v4u"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_8mgss"]
-radius = 71.2531
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4i68m"]
+size = Vector2(114, 72)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n7pa8"]
 atlas = ExtResource("2_j6ecr")
@@ -99,14 +100,19 @@ animations = [{
 "speed": 12.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gdyma"]
+size = Vector2(100, 16)
+
 [node name="Horse" type="RigidBody2D"]
 gravity_scale = 0.0
+lock_rotation = true
+contact_monitor = true
+max_contacts_reported = 1
 script = ExtResource("1_6d1xh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(-6, 0)
-shape = SubResource("CircleShape2D_8mgss")
+shape = SubResource("RectangleShape2D_4i68m")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_xae8c")
@@ -134,7 +140,18 @@ stream = ExtResource("3_ixpu0")
 autoplay = true
 parameters/looping = true
 
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-5, -37)
+shape = SubResource("RectangleShape2D_gdyma")
+
+[node name="DeathSoundPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_b7v4u")
+
 [connection signal="screen_exited" from="Right" to="." method="_on_right_screen_exited"]
 [connection signal="screen_exited" from="Left" to="." method="_on_left_screen_exited"]
 [connection signal="screen_exited" from="Up" to="." method="_on_up_screen_exited"]
 [connection signal="screen_exited" from="Down" to="." method="_on_down_screen_exited"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_top_collision"]
+[connection signal="finished" from="DeathSoundPlayer" to="." method="queue_free"]

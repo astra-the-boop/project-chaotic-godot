@@ -55,7 +55,7 @@ position_smoothing_speed = 2.0
 script = ExtResource("5_rmkm4")
 player = NodePath("../PLayer")
 
-[node name="PLayer" type="CharacterBody2D" parent="."]
+[node name="PLayer" type="CharacterBody2D" parent="." groups=["player"]]
 unique_name_in_owner = true
 script = ExtResource("2_8aixf")
 

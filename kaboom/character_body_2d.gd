@@ -17,9 +17,6 @@ var width: float = 1:
 		width = max(value, 1)
 		scale.x = width
 
-func _ready():
-	add_to_group("player")
-
 func _physics_process(delta: float) -> void:
 	var input_dir: Vector2 = input()
 	if input_dir != Vector2.ZERO:
